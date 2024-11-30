@@ -135,14 +135,16 @@ modules:
           - name: python-docutils
             buildsystem: simple
             build-commands:
-              - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
+              - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+                --prefix=${FLATPAK_DEST} "docutils"
             sources:
-              - type: archive
-                url: https://files.pythonhosted.org/packages/ae/ed/aefcc8cd0ba62a0560c3c18c33925362d46c6075480bfa4df87b28e169a9/docutils-0.21.2.tar.gz
-                sha256: 3a6b18732edf182daa3cd12775bbb338cf5691468f91eeeb109deff6ebfa986f
+              - type: file
+                url: https://files.pythonhosted.org/packages/8f/d7/9322c609343d929e75e7e5e6255e614fcc67572cfd083959cdef3b7aad79/docutils-0.21.2-py3-none-any.whl
+                sha256: dafca5b9e384f0e419294eb4d2ff9fa826435bf15f15b7bd45723e8ad76811b2
                 x-checker-data:
                   type: pypi
                   name: docutils
+                  packagetype: bdist_wheel
             cleanup:
               - '*'
           - name: rpcsvc-proto
