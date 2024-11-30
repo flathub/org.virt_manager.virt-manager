@@ -42,6 +42,7 @@ cleanup:
   - /share/bash-completion
   - /share/icons/hicolor/icon-theme.cache
   - /share/man
+  - /share/pkgconfig
   - '*.la'
 modules:
   - name: virt-manager
