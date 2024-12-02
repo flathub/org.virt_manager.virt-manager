@@ -1,14 +1,14 @@
-From 0f53f442328f0292f84c9dfbaf11f3ee1d958c1e Mon Sep 17 00:00:00 2001
+From df2688dcba3ae06ec66792e756ca236900c0588c Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Timoth=C3=A9e=20Ravier?= <tim@siosm.fr>
 Date: Mon, 25 Nov 2024 10:08:14 +0100
 Subject: [PATCH] Fix metadata for Flathub
 
 ---
- data/virt-manager.appdata.xml.in | 12 +++++++++++-
- 1 file changed, 11 insertions(+), 1 deletion(-)
+ data/virt-manager.appdata.xml.in | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
 
 diff --git a/data/virt-manager.appdata.xml.in b/data/virt-manager.appdata.xml.in
-index 0383852e..968b2437 100644
+index 35c59c0b..70bc254e 100644
 --- a/data/virt-manager.appdata.xml.in
 +++ b/data/virt-manager.appdata.xml.in
 @@ -1,8 +1,11 @@
@@ -24,20 +24,21 @@ index 0383852e..968b2437 100644
    <name>Virtual Machine Manager</name>
    <summary>Graphically manage KVM, Xen, or LXC via libvirt</summary>
    <description>
-@@ -40,6 +43,13 @@
+@@ -39,7 +42,13 @@
      <keyword>kvm</keyword>
    </keywords>
    <content_rating type="oars-1.1"/>
+-  <launchable type="desktop-id">virt-manager.desktop</launchable>
 +  <launchable type="desktop-id">org.virt_manager.virt-manager.desktop</launchable>
 +  <replaces>
 +    <id>virt-manager.desktop</id>
 +  </replaces>
-+    <provides>
++  <provides>
 +    <id>virt-manager.desktop</id>
 +  </provides>
    <releases>
+     <release version="5.0.0" date="2024-11-26"/>
      <release version="4.1.0" date="2022-08-04"/>
-     <release version="4.0.0" date="2022-03-02"/>
 -- 
-2.47.0
+2.47.1
 
