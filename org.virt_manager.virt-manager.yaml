@@ -92,8 +92,8 @@ modules:
           - -Dsysctl_config=disabled
         sources:
           - type: archive
-            url: https://libvirt.org/sources/libvirt-10.9.0.tar.xz
-            sha256: 2473db10bb9b9992c02897cef4b26ae58885ff357cea5f9ce3ec9e008f6b5b3a
+            url: https://libvirt.org/sources/libvirt-10.10.0.tar.xz
+            sha256: e1bd7bd31b7c0d0ae073dec050bb5b0232b3e4adebdc58ea82fe8b366c765796
             x-checker-data:
               type: anitya
               project-id: 13830
@@ -207,8 +207,8 @@ modules:
           - python3 setup.py install --skip-build --prefix=/app --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://libvirt.org/sources/python/libvirt-python-10.9.0.tar.gz
-            sha256: 44833fc6017fc88e43586a78c028a89fa1e1c1bae5089160c62356308ac9a37a
+            url: https://libvirt.org/sources/python/libvirt-python-10.10.0.tar.gz
+            sha256: 8acf6dcfb33a03ed92f9440cb1a0b8d3fc53fb23bba2e76ceedeb8bfb5327557
             x-checker-data:
               type: anitya
               project-id: 13829
