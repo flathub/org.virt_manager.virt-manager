@@ -46,14 +46,7 @@ cleanup:
   - '*.la'
 modules:
   - name: virt-manager
-    buildsystem: simple
-    build-commands:
-      - python setup.py configure --prefix=${FLATPAK_DEST}
-      - python setup.py build
-      - python setup.py --no-update-icon-cache --no-compile-schemas install --root=/
-      - python -m compileall ${FLATPAK_DEST}/share/virt-manager
-      - python -O -m compileall ${FLATPAK_DEST}/share/virt-manager
-      - glib-compile-schemas ${FLATPAK_DEST}/share/glib-2.0/schemas
+    buildsystem: meson
     sources:
       - type: archive
         url: https://github.com/virt-manager/virt-manager/archive/v5.0.0.tar.gz
