@@ -42,21 +42,15 @@ cleanup:
   - /share/bash-completion
   - /share/icons/hicolor/icon-theme.cache
   - /share/man
+  - /share/pkgconfig
   - '*.la'
 modules:
   - name: virt-manager
-    buildsystem: simple
-    build-commands:
-      - python setup.py configure --prefix=${FLATPAK_DEST}
-      - python setup.py build
-      - python setup.py --no-update-icon-cache --no-compile-schemas install --root=/
-      - python -m compileall ${FLATPAK_DEST}/share/virt-manager
-      - python -O -m compileall ${FLATPAK_DEST}/share/virt-manager
-      - glib-compile-schemas ${FLATPAK_DEST}/share/glib-2.0/schemas
+    buildsystem: meson
     sources:
       - type: archive
-        url: https://github.com/virt-manager/virt-manager/archive/v4.1.0.tar.gz
-        sha256: 2440f5517a5d3684a8e4858d87e5a946c54e5b918d52bf80ac7a9f05ea41f1b8
+        url: https://github.com/virt-manager/virt-manager/archive/v5.0.0.tar.gz
+        sha256: 8a26b818ddbd37c90f665aacbab4f747fb6aa8f7ff7e012c73d1fe4d9aad5dd2
         x-checker-data:
           type: anitya
           project-id: 8183
@@ -91,8 +85,8 @@ modules:
           - -Dsysctl_config=disabled
         sources:
           - type: archive
-            url: https://libvirt.org/sources/libvirt-10.9.0.tar.xz
-            sha256: 2473db10bb9b9992c02897cef4b26ae58885ff357cea5f9ce3ec9e008f6b5b3a
+            url: https://libvirt.org/sources/libvirt-10.10.0.tar.xz
+            sha256: e1bd7bd31b7c0d0ae073dec050bb5b0232b3e4adebdc58ea82fe8b366c765796
             x-checker-data:
               type: anitya
               project-id: 13830
@@ -113,9 +107,10 @@ modules:
                 x-checker-data:
                   type: json
                   url: https://api.github.com/repos/thom311/libnl/releases/latest
-                  version-query: .tag_name | ( sub("^libnl"; "") | gsub("_"; ".") )
-                  url-query: .assets[] | select(.name=="libnl-" + $version + ".tar.gz") |
-                    .browser_download_url
+                  version-query: .tag_name | ( sub("^libnl"; "") | gsub("_"; ".")
+                    )
+                  url-query: .assets[] | select(.name=="libnl-" + $version + ".tar.gz")
+                    | .browser_download_url
             cleanup:
               - /etc
               - /share/man
@@ -134,14 +129,16 @@ modules:
           - name: python-docutils
             buildsystem: simple
             build-commands:
-              - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
+              - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+                --prefix=${FLATPAK_DEST} "docutils"
             sources:
-              - type: archive
-                url: https://files.pythonhosted.org/packages/6b/5c/330ea8d383eb2ce973df34d1239b3b21e91cd8c865d21ff82902d952f91f/docutils-0.19.tar.gz
-                sha256: 33995a6753c30b7f577febfc2c50411fec6aac7f7ffeb7c4cfe5991072dcf9e6
+              - type: file
+                url: https://files.pythonhosted.org/packages/8f/d7/9322c609343d929e75e7e5e6255e614fcc67572cfd083959cdef3b7aad79/docutils-0.21.2-py3-none-any.whl
+                sha256: dafca5b9e384f0e419294eb4d2ff9fa826435bf15f15b7bd45723e8ad76811b2
                 x-checker-data:
                   type: pypi
                   name: docutils
+                  packagetype: bdist_wheel
             cleanup:
               - '*'
           - name: rpcsvc-proto
@@ -203,8 +200,8 @@ modules:
           - python3 setup.py install --skip-build --prefix=/app --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://libvirt.org/sources/python/libvirt-python-10.9.0.tar.gz
-            sha256: 44833fc6017fc88e43586a78c028a89fa1e1c1bae5089160c62356308ac9a37a
+            url: https://libvirt.org/sources/python/libvirt-python-10.10.0.tar.gz
+            sha256: 8acf6dcfb33a03ed92f9440cb1a0b8d3fc53fb23bba2e76ceedeb8bfb5327557
             x-checker-data:
               type: anitya
               project-id: 13829
@@ -353,8 +350,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.78/vte-0.78.1.tar.xz
-            sha256: 6499d25179315255f9bcfce03c66fb84c03ad325dea23d0e372178521eca42b5
+            url: https://download.gnome.org/sources/vte/0.78/vte-0.78.2.tar.xz
+            sha256: 35d7bcde07356846b4a12881c8e016705b70a9004a9082285eee5834ccc49890
             x-checker-data:
               type: gnome
               name: vte
