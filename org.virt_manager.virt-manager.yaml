@@ -19,6 +19,8 @@ finish-args:
   - --filesystem=xdg-videos
   # Access to the UNIX socket for the local libvirtd system instance
   - --filesystem=/run/libvirt
+  # Access to the UNIX socket for the local libvirtd session instance
+  - --filesystem=xdg-run/libvirt
   # Access to ssh configuration and keys
   - --filesystem=~/.ssh
   # Access to ssh-agent pid and socket
