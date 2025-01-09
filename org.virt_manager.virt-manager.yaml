@@ -25,6 +25,8 @@ finish-args:
   - --filesystem=~/.ssh
   # Access to ssh-agent pid and socket
   - --socket=ssh-auth
+  # This PATH manipulation is needed so that the QEMU extension works OOTB
+  - --env=PATH=/app/bin:/usr/bin:/app/lib/qemu-extension/bin
   - --own-name=org.virt-manager.virt-manager
   - --share=ipc
   - --share=network
@@ -46,6 +48,12 @@ cleanup:
   - /share/man
   - /share/pkgconfig
   - '*.la'
+add-extensions:
+  org.virt_manager.virt_manager.Qemu:
+    version: stable
+    directory: "lib/qemu-extension"
+    no-autodownload: false
+    autodelete: true
 modules:
   - name: virt-manager
     buildsystem: meson
@@ -67,6 +75,76 @@ modules:
       - shared-modules/intltool/intltool-0.51.json
       - shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json
 
+      - name: qemu
+        config-opts:
+        - "--prefix=/app/lib/qemu-extension"
+        - "--disable-docs"
+        - "--disable-user"
+        - "--enable-kvm"
+        - "--enable-spice"
+        - "--enable-opengl"
+        - "--enable-virglrenderer"
+        - "--enable-usb-redir"
+        # Flatpak currently does not have smartcard support https://github.com/flatpak/flatpak/issues/4723
+        # - "--enable-smartcard"
+        - "--enable-slirp"
+        - "--python=/bin/python3"
+        - "--target-list=x86_64-softmmu,i386-softmmu"
+        sources:
+        - type: archive
+          url: https://download.qemu.org/qemu-9.2.0.tar.xz
+          sha256: f859f0bc65e1f533d040bbe8c92bcfecee5af2c921a6687c652fb44d089bd894
+        modules:
+        - shared-modules/libusb/libusb.json
+        - name: slirp
+          buildsystem: meson
+          sources:
+          - type: archive
+            url: https://gitlab.freedesktop.org/slirp/libslirp//-/archive/v4.8.0.tar.gz
+            sha256: 378216c88c021c9ed7de9006db291127d30a0da94a23dffefdb26b26a5849bf7
+        - name: usbredir
+          buildsystem: meson
+          config-opts:
+          - "-Dtools=disabled"
+          sources:
+          - type: archive
+            url: https://spice-space.org/download/usbredir/usbredir-0.14.0.tar.xz
+            sha256: 924dfb5c78328fae45a4c93a01bc83bb72c1310abeed119109255627a8baa332
+        - name: virglrenderer
+          buildsystem: meson
+          sources:
+          - type: archive
+            url: https://gitlab.freedesktop.org/virgl/virglrenderer/-/archive/1.1.0/virglrenderer-1.1.0.tar.gz
+            sha256: 9996b87bda2fbf515473b60f32b00ed58847da733b47053923fd2cb035a6f5a2
+        - name: spice
+          buildsystem: autotools
+          config-opts:
+            - --disable-lz4
+            - --disable-manual
+            - --disable-test
+          sources:
+          - type: archive
+            url: https://www.spice-space.org/download/releases/spice-0.15.1.tar.bz2
+            sha256: ada9af67ab321916bd7eb59e3d619a4a7796c08a28c732edfc7f02fc80b1a37a
+          modules:
+          - name: spice-protocol
+            buildsystem: meson
+            sources:
+              - type: archive
+                url: https://gitlab.freedesktop.org/spice/spice-protocol/-/archive/v0.14.4/spice-protocol-v0.14.4.tar.gz
+                sha256: 9c31fa533ad531d1b816ffd0c24b4785d133e7bb397f72d35f7a6d59bcd7d53a
+                x-checker-data:
+                  type: anitya
+                  project-id: 14892
+                  stable-only: true
+                  url-template: https://gitlab.freedesktop.org/spice/spice-protocol/-/archive/v$version/spice-protocol-v$version.tar.gz
+          - name: dtc
+            buildsystem: meson
+            sources:
+              - type: archive
+                url: https://git.kernel.org/pub/scm/utils/dtc/dtc.git/snapshot/v1.7.2.tar.gz
+                sha256: 04a30bd38b426ed771b8a8b5d9b773e54976d4f5d51a80a9e76a45b20c9a8272
+
       - name: libvirt
         buildsystem: meson
         build-options:
@@ -75,9 +153,11 @@ modules:
           - --libexec=/app/lib/libvirt
           - --sbindir=/app/bin
           - --localstatedir=/var
+          - -Ddriver_qemu=enabled
           - -Drunstatedir=/run
           - -Drpath=enabled
-          - -Dqemu_group=kvm
+          - -Dqemu_user=qemu
+          - -Dqemu_group=qemu
           - -Ddocs=enabled
           - -Dtests=disabled
           - -Dstorage_mpath=disabled
@@ -94,10 +174,21 @@ modules:
               project-id: 13830
               stable-only: true
               url-template: https://libvirt.org/sources/libvirt-$version.tar.xz
+          - type: patch
+            path: libvirt-use-monitor-in-xdg-runtime-dir.patch
         cleanup:
           - /etc/logrotate.d
           - /share/doc
         modules:
+          - name: json-c
+            buildsystem: cmake
+            config-opts:
+              - -DENABLE_THREADING=ON
+              - -DDISABLE_WERROR=ON
+            sources:
+              - type: archive
+                url: https://s3.amazonaws.com/json-c_releases/releases/json-c-0.18.tar.gz
+                sha256: 876ab046479166b869afc6896d288183bbc0e5843f141200c677b3e8dfb11724
           - name: libnl
             config-opts:
               - --enable-cli=no
