@@ -26,7 +26,7 @@ finish-args:
   # Access to ssh-agent pid and socket
   - --socket=ssh-auth
   # This PATH manipulation is needed so that the QEMU extension works OOTB
-  - --env=PATH=/app/bin:/usr/bin:/app/lib/extensions/qemu/bin
+  - --env=PATH=/app/bin:/usr/bin:/app/lib/extensions/bin
   - --own-name=org.virt-manager.virt-manager
   - --share=ipc
   - --share=network
@@ -51,9 +51,10 @@ cleanup:
 cleanup-commands:
   - mkdir -p ${FLATPAK_DEST}/lib/extensions
 add-extensions:
-  org.virt_manager.virt_manager.Extension.Qemu:
+  org.virt_manager.virt_manager.Extension:
     directory: "lib/extensions"
     subdirectories: true
+    merge-dirs: qemu
     no-autodownload: false
     autodelete: true
 modules:
@@ -113,7 +114,7 @@ modules:
           - /share/doc
         modules:
           - name: json-c
-            buildsystem: cmake
+            buildsystem: cmake-ninja
             config-opts:
               - -DENABLE_THREADING=ON
               - -DDISABLE_WERROR=ON
