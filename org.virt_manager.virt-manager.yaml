@@ -54,7 +54,8 @@ add-extensions:
   org.virt_manager.virt_manager.Extension:
     directory: "lib/extensions"
     subdirectories: true
-    merge-dirs: qemu
+    merge-dirs: bin;share;lib
+    add-ld-path: lib
     no-autodownload: false
     autodelete: true
 modules:
