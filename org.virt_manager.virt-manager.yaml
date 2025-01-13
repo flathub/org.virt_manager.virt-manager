@@ -65,7 +65,7 @@ modules:
 
     modules:
       - shared-modules/intltool/intltool-0.51.json
-      - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
+      - shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json
 
       - name: libvirt
         buildsystem: meson
