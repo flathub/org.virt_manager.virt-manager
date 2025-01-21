@@ -25,6 +25,8 @@ finish-args:
   - --filesystem=~/.ssh
   # Access to ssh-agent pid and socket
   - --socket=ssh-auth
+  # This PATH manipulation is needed so that the QEMU extension works OOTB
+  - --env=PATH=/app/bin:/usr/bin:/app/lib/extensions/bin
   - --own-name=org.virt-manager.virt-manager
   - --share=ipc
   - --share=network
@@ -46,6 +48,15 @@ cleanup:
   - /share/man
   - /share/pkgconfig
   - '*.la'
+cleanup-commands:
+  - mkdir -p ${FLATPAK_DEST}/lib/extensions
+add-extensions:
+  org.virt_manager.virt_manager.Extension:
+    directory: "lib/extensions"
+    subdirectories: true
+    merge-dirs: bin;share;lib
+    add-ld-path: lib
+    autodelete: true
 modules:
   - name: virt-manager
     buildsystem: meson
@@ -75,9 +86,11 @@ modules:
           - --libexec=/app/lib/libvirt
           - --sbindir=/app/bin
           - --localstatedir=/var
+          - -Ddriver_qemu=enabled
           - -Drunstatedir=/run
           - -Drpath=enabled
-          - -Dqemu_group=kvm
+          - -Dqemu_user=qemu
+          - -Dqemu_group=qemu
           - -Ddocs=enabled
           - -Dtests=disabled
           - -Dstorage_mpath=disabled
@@ -94,10 +107,21 @@ modules:
               project-id: 13830
               stable-only: true
               url-template: https://libvirt.org/sources/libvirt-$version.tar.xz
+          - type: patch
+            path: libvirt-use-monitor-in-xdg-runtime-dir.patch
         cleanup:
           - /etc/logrotate.d
           - /share/doc
         modules:
+          - name: json-c
+            buildsystem: cmake-ninja
+            config-opts:
+              - -DENABLE_THREADING=ON
+              - -DDISABLE_WERROR=ON
+            sources:
+              - type: archive
+                url: https://s3.amazonaws.com/json-c_releases/releases/json-c-0.18.tar.gz
+                sha256: 876ab046479166b869afc6896d288183bbc0e5843f141200c677b3e8dfb11724
           - name: libnl
             config-opts:
               - --enable-cli=no

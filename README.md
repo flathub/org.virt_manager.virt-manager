@@ -1,7 +1,7 @@
 # Virtual Machine Manager (virt-manager)
 
-**NOTE:** This Flatpak does not include the libvirt daemon. You must install it
-on your host or a remote system and connect to it.
+**NOTE:** This Flatpak does not include the libvirt daemon by default. You must install it
+either on your host or a remote system and connect to it, or you can install the QEMU extension by running `flatpak install org.virt_manager.virt_manager.Extension.Qemu`
 
 For a more integrated experience, look at
 [Boxes](https://flathub.org/apps/org.gnome.Boxes).
