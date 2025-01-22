@@ -1,9 +1,17 @@
 # Virtual Machine Manager (virt-manager)
 
-**NOTE:** This Flatpak does not include the libvirt daemon by default. You must install it
-either on your host or a remote system and connect to it, or you can install the QEMU extension by running `flatpak install org.virt_manager.virt_manager.Extension.Qemu`
+**NOTE:** By default, this Flatpak only includes the Virtual Machine Manager
+client application and does not include the libvirt daemon or QEMU. Depending
+on your use case, you may have to install other applications or extensions:
 
-For a more integrated experience, look at
+- Connecting to a remote libvirt instance: nothing else needed
+- Connecting to a libvirt system instance: make sure that libvirtd is installed
+  on the host, either via your package manager or using a system extension on
+  image based systems for example
+- Connecting to a libvirt user instance: install the QEMU extensions using
+  `flatpak install org.virt_manager.virt_manager.Extension.Qemu`
+
+For a more integrated experience, take a look at
 [Boxes](https://flathub.org/apps/org.gnome.Boxes).
 
 ## Known issues or untested features
@@ -35,7 +43,8 @@ This Flatpak currently has access to `~/.ssh`.
   permission the ssh configuration won't be saved between running sessions.
 * enabled by default, if you don't like giving the sandbox this access then
   override it with flatpak-override or flatseal and add a `--persist=.ssh` to
-  keep the ssh config dir in HOME/.var/app/org.virt_manager.virt-manager/.ssh
+  keep the ssh config dir in
+  `$HOME/.var/app/org.virt_manager.virt-manager/.ssh`
 * using persist also means that the sandbox won't have access to your private
   key files so it won't be able to change them, if this is even something to be
   concerned about instead of giving access to the keys, give access to the
@@ -46,19 +55,19 @@ This Flatpak currently has access to `~/.ssh`.
 This Flatpak currently has access to the host's SSH agent.
 
 * access to the running ssh-agent on the host
-* it's presumed that SSH_AGENT_PID and SSH_AUTH_SOCK are known in the sandbox,
-  and that SSH_AUTH_SOCK is accessible in the sandbox
-* the default, `--socket=ssh-auth`, bind-mounts the xdg-run/ssh-auth, only used
-  by gnome-keyring's ssh agent but it's a good location as any to put the
+* it's presumed that `SSH_AGENT_PID` and `SSH_AUTH_SOCK` are known in the
+  sandbox, and that `SSH_AUTH_SOCK` is accessible in the sandbox
+* the default, `--socket=ssh-auth`, bind-mounts the `xdg-run/ssh-auth`, only
+  used by gnome-keyring's ssh agent but it's a good location as any to put the
   ssh-agent file socket
 * if you're not using gnome-keyring's ssh agent then you gonna need to force
   your ssh-agent to create the socket in this mentioned dir, that you will also
   need to create before starting the app, or in another location, and then you
   should add the suitable filesystem permission. just make sure to only
   bind-mount an existing folder, and don't directly bind-mount the socket.
-  custom ssh socket location --filesystem=xdg-run/ssh.
+  custom ssh socket location `--filesystem=xdg-run/ssh`.
 * see example in the ssh-agents section in the Arch Wiki's ssh keys page
-  https://wiki.archlinux.org/index.php/SSH_keys#SSH_agents
+  <https://wiki.archlinux.org/index.php/SSH_keys#SSH_agents>
 
 ## Links
 
