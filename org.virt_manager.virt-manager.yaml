@@ -57,6 +57,7 @@ add-extensions:
     merge-dirs: bin;share;lib
     add-ld-path: lib
     autodelete: true
+    no-autodownload: true
 modules:
   - name: virt-manager
     buildsystem: meson
