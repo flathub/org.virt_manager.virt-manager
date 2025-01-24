@@ -8,8 +8,9 @@ on your use case, you may have to install other applications or extensions:
 - Connecting to a libvirt system instance: make sure that libvirtd is installed
   on the host, either via your package manager or using a system extension on
   image based systems for example
-- Connecting to a libvirt user instance: install the QEMU extensions using
-  `flatpak install org.virt_manager.virt_manager.Extension.Qemu`
+- Connecting to a libvirt user instance: install the
+  [QEMU extension](https://github.com/flathub/org.virt_manager.virt_manager.Extension.Qemu)
+  using `flatpak install org.virt_manager.virt_manager.Extension.Qemu`
 
 For a more integrated experience, take a look at
 [Boxes](https://flathub.org/apps/org.gnome.Boxes).
@@ -17,8 +18,11 @@ For a more integrated experience, take a look at
 ## Known issues or untested features
 
 As the feature set of virt-manager is quite large, we have not yet tested that
-all functionnalities work with the Flatpak. Please report issues in this repo
+all functionalities work with the Flatpak. Please report issues in this repo
 if you find something that does not work.
+
+Note that issues with the QEMU/KVM user session should be reported to the
+[issue tracker for the QEMU extension](https://github.com/flathub/org.virt_manager.virt_manager.Extension.Qemu/issues).
 
 ### USB redirection
 
