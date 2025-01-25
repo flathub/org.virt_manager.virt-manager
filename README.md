@@ -15,6 +15,12 @@ on your use case, you may have to install other applications or extensions:
 For a more integrated experience, take a look at
 [Boxes](https://flathub.org/apps/org.gnome.Boxes).
 
+## Use with CLI
+
+You can open the sandboxed Bash environment with the following command:
+```flatpak run --command=bash org.virt_manager.virt-manager```
+This launches a Bash shell within the Flatpak sandbox for Virt-Manager, allowing you to run CLI tools like virsh, virt-install or execute other commands related to virtual machine management.
+
 ## Known issues or untested features
 
 As the feature set of virt-manager is quite large, we have not yet tested that
