@@ -377,8 +377,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.78/vte-0.78.2.tar.xz
-            sha256: 35d7bcde07356846b4a12881c8e016705b70a9004a9082285eee5834ccc49890
+            url: https://download.gnome.org/sources/vte/0.79/vte-0.79.0.tar.xz
+            sha256: 32e58453f892114ff49ed2f682a602f055d088a8a8e5bbcd7004e133ce00bd40
             x-checker-data:
               type: gnome
               name: vte
@@ -457,8 +457,8 @@ modules:
               - osinfo-db-import --system osinfo-db.tar.xz
             sources:
               - type: file
-                url: https://releases.pagure.org/libosinfo/osinfo-db-20240701.tar.xz
-                sha256: 1d7381a72f0c45f473befa4a92fa010a37fc4f7b2bb5d1f68e06da440ef6905d
+                url: https://releases.pagure.org/libosinfo/osinfo-db-20250124.tar.xz
+                sha256: 7ca717f0975a798135a2b39eefdd1436a0b0682e29685c7fd01ef7f83a257250
                 dest-filename: osinfo-db.tar.xz
                 x-checker-data:
                   type: anitya
