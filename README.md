@@ -19,7 +19,7 @@ For a more integrated experience, take a look at
 
 You can open the sandboxed Bash environment with the following command:
 ```flatpak run --command=bash org.virt_manager.virt-manager```
-This launches a Bash shell within the Flatpak sandbox for Virt-Manager, allowing you to run CLI tools like virsh, virt-install or execute other commands related to virtual machine management.
+This launches a Bash shell within the Flatpak sandbox for Virt-Manager, allowing you to run CLI tools like `virsh`, `virt-install` or execute other commands related to virtual machine management.
 
 ## Known issues or untested features
 
