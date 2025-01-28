@@ -391,12 +391,25 @@ modules:
           - /share/gir-1.0
           - /share/vala
         modules:
-          - name: fast-float
+          - name: fast_float
             buildsystem: cmake-ninja
+            config-opts:
+              - -GNinja
+              - -DFETCHCONTENT_FULLY_DISCONNECTED:BOOL=ON
+              - -DSYSTEM_DOCTEST:BOOL=OFF
+              - -DFASTFLOAT_TEST:BOOL=OFF
+              - -DFASTFLOAT_EXHAUSTIVE:BOOL=OFF 
+            cleanup:
+              - /include
             sources:
               - type: archive
                 url: https://github.com/fastfloat/fast_float/archive/refs/tags/v7.0.0.tar.gz
                 sha256: d2a08e722f461fe699ba61392cd29e6b23be013d0f56e50c7786d0954bffcb17
+                x-checker-data:
+                  type: anitya
+                  project-id: 214353
+                  stable-only: true
+                  url-template: https://github.com/fastfloat/fast_float/archive/refs/tags/v$version.tar.gz
 
       - name: python3-requests
         buildsystem: simple
