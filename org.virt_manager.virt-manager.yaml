@@ -395,12 +395,7 @@ modules:
             buildsystem: cmake-ninja
             config-opts:
               - -GNinja
-              - -DFETCHCONTENT_FULLY_DISCONNECTED:BOOL=ON
-              - -DSYSTEM_DOCTEST:BOOL=OFF
               - -DFASTFLOAT_TEST:BOOL=OFF
-              - -DFASTFLOAT_EXHAUSTIVE:BOOL=OFF 
-            cleanup:
-              - /include
             sources:
               - type: archive
                 url: https://github.com/fastfloat/fast_float/archive/refs/tags/v7.0.0.tar.gz
