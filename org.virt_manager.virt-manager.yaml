@@ -92,6 +92,7 @@ modules:
           - -Drpath=enabled
           - -Dqemu_user=qemu
           - -Dqemu_group=qemu
+          - -Dqemu_datadir=/app/lib/extensions/share/qemu
           - -Ddocs=enabled
           - -Dtests=disabled
           - -Dstorage_mpath=disabled
