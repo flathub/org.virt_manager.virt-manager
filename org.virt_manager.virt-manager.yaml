@@ -361,8 +361,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-4.8.4.tar.xz
-            sha256: 7ec9d18fb283d1f84a3a3eff3b7a72b09a10c9c006597b3fbabbb5958420a87d
+            url: https://download.gnome.org/sources/gtksourceview/4.99/gtksourceview-4.99.0.tar.xz
+            sha256: a2ae510d94a7fc3374f2f24d3f2ed9bd2bb89b1ad5605c974e2bec8d7ae951f7
             x-checker-data:
               type: gnome
               name: gtksourceview
