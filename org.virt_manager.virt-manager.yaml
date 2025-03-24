@@ -271,8 +271,8 @@ modules:
                 --prefix=${FLATPAK_DEST} pyparsing --no-build-isolation
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/1c/a7/c8a2d361bf89c0d9577c934ebb7421b25dc84bf3a8e3ac0a40aed9acc547/pyparsing-3.2.1-py3-none-any.whl
-                sha256: 506ff4f4386c4cec0590ec19e6302d3aedb992fdc02c761e90416f158dacf8e1
+                url: https://files.pythonhosted.org/packages/f9/83/80c17698f41131f7157a26ae985e2c1f5526db79f277c4416af145f3e12b/pyparsing-3.2.2-py3-none-any.whl
+                sha256: 6ab05e1cb111cc72acc8ed811a3ca4c2be2af8d7b6df324347f04fd057d8d793
                 x-checker-data:
                   type: pypi
                   name: pyparsing
@@ -361,8 +361,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-4.8.4.tar.xz
-            sha256: 7ec9d18fb283d1f84a3a3eff3b7a72b09a10c9c006597b3fbabbb5958420a87d
+            url: https://download.gnome.org/sources/gtksourceview/4.99/gtksourceview-4.99.0.tar.xz
+            sha256: a2ae510d94a7fc3374f2f24d3f2ed9bd2bb89b1ad5605c974e2bec8d7ae951f7
             x-checker-data:
               type: gnome
               name: gtksourceview
@@ -378,8 +378,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.79/vte-0.79.91.tar.xz
-            sha256: adca667d40ae1839ba258b63701cd05fba249303d72258711cc69294b2cb8646
+            url: https://download.gnome.org/sources/vte/0.80/vte-0.80.0.tar.xz
+            sha256: 267f63739765e568cf8113d0e2ee8f593028946187854bebe268c778e62647c8
             x-checker-data:
               type: gnome
               name: vte
@@ -399,8 +399,8 @@ modules:
               - -DFASTFLOAT_TEST:BOOL=OFF
             sources:
               - type: archive
-                url: https://github.com/fastfloat/fast_float/archive/refs/tags/v8.0.0.tar.gz
-                sha256: f312f2dc34c61e665f4b132c0307d6f70ad9420185fa831911bc24408acf625d
+                url: https://github.com/fastfloat/fast_float/archive/refs/tags/v8.0.2.tar.gz
+                sha256: e14a33089712b681d74d94e2a11362643bd7d769ae8f7e7caefe955f57f7eacd
                 x-checker-data:
                   type: anitya
                   project-id: 214353
