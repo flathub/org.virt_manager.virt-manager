@@ -361,8 +361,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-4.8.4.tar.xz
-            sha256: 7ec9d18fb283d1f84a3a3eff3b7a72b09a10c9c006597b3fbabbb5958420a87d
+            url: https://download.gnome.org/sources/gtksourceview/4.99/gtksourceview-4.99.0.tar.xz
+            sha256: a2ae510d94a7fc3374f2f24d3f2ed9bd2bb89b1ad5605c974e2bec8d7ae951f7
             x-checker-data:
               type: gnome
               name: gtksourceview
@@ -378,8 +378,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.80/vte-0.80.0.tar.xz
-            sha256: 267f63739765e568cf8113d0e2ee8f593028946187854bebe268c778e62647c8
+            url: https://download.gnome.org/sources/vte/0.80/vte-0.80.1.tar.xz
+            sha256: 0cdbd0e983afd9d22e065e323a743160072bf64b453e00b15edbe6f2dcdda46c
             x-checker-data:
               type: gnome
               name: vte
@@ -414,8 +414,8 @@ modules:
             --prefix=${FLATPAK_DEST} "requests" --no-build-isolation
         sources:
           - type: file
-            url: https://files.pythonhosted.org/packages/c8/19/4ec628951a74043532ca2cf5d97b7b14863931476d117c471e8e2b1eb39f/urllib3-2.3.0-py3-none-any.whl
-            sha256: 1cee9ad369867bfdbbb48b7dd50374c0967a0bb7710050facf0dd6911440e3df
+            url: https://files.pythonhosted.org/packages/6b/11/cc635220681e93a0183390e26485430ca2c7b5f9d33b15c74c2861cb8091/urllib3-2.4.0-py3-none-any.whl
+            sha256: 4e16665048960a0900c702d4a66415956a584919c03361cac9f1df5c5dd7e813
             x-checker-data:
               type: pypi
               name: urllib3
