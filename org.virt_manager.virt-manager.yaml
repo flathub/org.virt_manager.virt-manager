@@ -102,8 +102,8 @@ modules:
           - -Dsysctl_config=disabled
         sources:
           - type: archive
-            url: https://libvirt.org/sources/libvirt-11.2.0.tar.xz
-            sha256: 07b91052b4e44cf2e5c21bfe1a8095f98db47a917b38d95d2a7ec50ff6bdade9
+            url: https://libvirt.org/sources/libvirt-11.3.0.tar.xz
+            sha256: 6bcb0c42c4580436fea262ced56f68a6afe20f7390b1bea2116718cc034a0283
             x-checker-data:
               type: anitya
               project-id: 13830
@@ -228,8 +228,8 @@ modules:
           - python3 setup.py install --skip-build --prefix=/app --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://libvirt.org/sources/python/libvirt-python-11.2.0.tar.gz
-            sha256: bb5f245f0e01579b0b48e8657f0488f440e609c6b6c3c7c7e7c4ae4e61d3c346
+            url: https://libvirt.org/sources/python/libvirt-python-11.3.0.tar.gz
+            sha256: 4cd31e625e8fefbbe168faedb38cb7fa2da3fa7394326eed29dc46e7ca511979
             x-checker-data:
               type: anitya
               project-id: 13829
@@ -347,8 +347,8 @@ modules:
             buildsystem: meson
             sources:
               - type: archive
-                url: https://gitlab.freedesktop.org/spice/spice-protocol/-/archive/v0.14.4/spice-protocol-v0.14.4.tar.gz
-                sha256: 9c31fa533ad531d1b816ffd0c24b4785d133e7bb397f72d35f7a6d59bcd7d53a
+                url: https://gitlab.freedesktop.org/spice/spice-protocol/-/archive/v0.14.5/spice-protocol-v0.14.5.tar.gz
+                sha256: 1be179b3dfbb23946432275f4b7a4b59bb5e9acc25c3128bc930b8264a9f0a20
                 x-checker-data:
                   type: anitya
                   project-id: 14892
@@ -364,11 +364,10 @@ modules:
             url: https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-4.8.4.tar.xz
             sha256: 7ec9d18fb283d1f84a3a3eff3b7a72b09a10c9c006597b3fbabbb5958420a87d
             x-checker-data:
-              type: gnome
-              name: gtksourceview
-              versions:
-                <: 5.0.0
+              type: anitya
+              project-id: 319342
               stable-only: true
+              url-template: https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-$version.tar.xz
 
       - name: vte291
         buildsystem: meson
@@ -378,8 +377,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.80/vte-0.80.0.tar.xz
-            sha256: 267f63739765e568cf8113d0e2ee8f593028946187854bebe268c778e62647c8
+            url: https://download.gnome.org/sources/vte/0.80/vte-0.80.1.tar.xz
+            sha256: 0cdbd0e983afd9d22e065e323a743160072bf64b453e00b15edbe6f2dcdda46c
             x-checker-data:
               type: gnome
               name: vte
@@ -414,8 +413,8 @@ modules:
             --prefix=${FLATPAK_DEST} "requests" --no-build-isolation
         sources:
           - type: file
-            url: https://files.pythonhosted.org/packages/c8/19/4ec628951a74043532ca2cf5d97b7b14863931476d117c471e8e2b1eb39f/urllib3-2.3.0-py3-none-any.whl
-            sha256: 1cee9ad369867bfdbbb48b7dd50374c0967a0bb7710050facf0dd6911440e3df
+            url: https://files.pythonhosted.org/packages/6b/11/cc635220681e93a0183390e26485430ca2c7b5f9d33b15c74c2861cb8091/urllib3-2.4.0-py3-none-any.whl
+            sha256: 4e16665048960a0900c702d4a66415956a584919c03361cac9f1df5c5dd7e813
             x-checker-data:
               type: pypi
               name: urllib3
@@ -428,15 +427,15 @@ modules:
               name: idna
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/0e/f6/65ecc6878a89bb1c23a086ea335ad4bf21a588990c3f535a227b9eea9108/charset_normalizer-3.4.1-py3-none-any.whl
-            sha256: d98b1668f06378c6dbefec3b92299716b931cd4e6061f3c875a71ced1780ab85
+            url: https://files.pythonhosted.org/packages/20/94/c5790835a017658cbfabd07f3bfb549140c3ac458cfc196323996b10095a/charset_normalizer-3.4.2-py3-none-any.whl
+            sha256: 7f56930ab0abd1c45cd15be65cc741c28b1c9a34876ce8c17a2fa107810c0af0
             x-checker-data:
               type: pypi
               name: charset_normalizer
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/38/fc/bce832fd4fd99766c04d1ee0eead6b0ec6486fb100ae5e74c1d91292b982/certifi-2025.1.31-py3-none-any.whl
-            sha256: ca78db4565a652026a4db2bcdf68f2fb589ea80d0be70e03929ed730746b84fe
+            url: https://files.pythonhosted.org/packages/4a/7e/3db2bd1b1f9e95f7cddca6d6e75e2f2bd9f51b1246e546d88addca0106bd/certifi-2025.4.26-py3-none-any.whl
+            sha256: 30350364dfe371162649852c63336a15c70c6510c2ad5015b21c2345311805f3
             x-checker-data:
               type: pypi
               name: certifi
