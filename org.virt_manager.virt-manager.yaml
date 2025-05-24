@@ -377,8 +377,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.80/vte-0.80.1.tar.xz
-            sha256: 0cdbd0e983afd9d22e065e323a743160072bf64b453e00b15edbe6f2dcdda46c
+            url: https://download.gnome.org/sources/vte/0.80/vte-0.80.2.tar.xz
+            sha256: b225bebd043633bd491f2ea171374d0f3f9de62dfec07653053bc08c4face46f
             x-checker-data:
               type: gnome
               name: vte
