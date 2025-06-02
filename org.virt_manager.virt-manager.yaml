@@ -102,8 +102,8 @@ modules:
           - -Dsysctl_config=disabled
         sources:
           - type: archive
-            url: https://libvirt.org/sources/libvirt-11.3.0.tar.xz
-            sha256: 6bcb0c42c4580436fea262ced56f68a6afe20f7390b1bea2116718cc034a0283
+            url: https://libvirt.org/sources/libvirt-11.4.0.tar.xz
+            sha256: e10059efc655532b0cfe44d961c87c5a56e45393cc7bd343bd3348b40d73b267
             x-checker-data:
               type: anitya
               project-id: 13830
@@ -228,8 +228,8 @@ modules:
           - python3 setup.py install --skip-build --prefix=/app --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://libvirt.org/sources/python/libvirt-python-11.3.0.tar.gz
-            sha256: 4cd31e625e8fefbbe168faedb38cb7fa2da3fa7394326eed29dc46e7ca511979
+            url: https://libvirt.org/sources/python/libvirt-python-11.4.0.tar.gz
+            sha256: 7335de498e3fdb2c96f68ee4065d44ab0404b79923d6316819a4b5f963f80125
             x-checker-data:
               type: anitya
               project-id: 13829
@@ -377,8 +377,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.80/vte-0.80.1.tar.xz
-            sha256: 0cdbd0e983afd9d22e065e323a743160072bf64b453e00b15edbe6f2dcdda46c
+            url: https://download.gnome.org/sources/vte/0.80/vte-0.80.2.tar.xz
+            sha256: b225bebd043633bd491f2ea171374d0f3f9de62dfec07653053bc08c4face46f
             x-checker-data:
               type: gnome
               name: vte
