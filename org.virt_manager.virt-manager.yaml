@@ -114,8 +114,8 @@ modules:
           - -Dsysctl_config=disabled
         sources:
           - type: archive
-            url: https://libvirt.org/sources/libvirt-11.5.0.tar.xz
-            sha256: 2b63b9d60538e1e2fa4e3f6d836409e6ff705249c79001914ac3400859d72423
+            url: https://libvirt.org/sources/libvirt-11.6.0.tar.xz
+            sha256: cc0e8c226559b479833c8bc9c77a8ec301482ab0305fcd98d27f11cc6877fd23
             x-checker-data:
               type: anitya
               project-id: 13830
@@ -173,8 +173,8 @@ modules:
                 --prefix=${FLATPAK_DEST} "docutils"
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/8f/d7/9322c609343d929e75e7e5e6255e614fcc67572cfd083959cdef3b7aad79/docutils-0.21.2-py3-none-any.whl
-                sha256: dafca5b9e384f0e419294eb4d2ff9fa826435bf15f15b7bd45723e8ad76811b2
+                url: https://files.pythonhosted.org/packages/44/57/8db39bc5f98f042e0153b1de9fb88e1a409a33cda4dd7f723c2ed71e01f6/docutils-0.22-py3-none-any.whl
+                sha256: 4ed966a0e96a0477d852f7af31bdcb3adc049fbb35ccba358c2ea8a03287615e
                 x-checker-data:
                   type: pypi
                   name: docutils
@@ -240,8 +240,8 @@ modules:
           - python3 setup.py install --skip-build --prefix=/app --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://libvirt.org/sources/python/libvirt-python-11.5.0.tar.gz
-            sha256: 69aad89ec689526835bf7d2d224badafe52a2def0d719676166755a8eab7ac23
+            url: https://libvirt.org/sources/python/libvirt-python-11.6.0.tar.gz
+            sha256: cf6077eddf7e0d20d7193c48309d57cb8d63e2adc68cafb2cf8354ec3d807dd8
             x-checker-data:
               type: anitya
               project-id: 13829
