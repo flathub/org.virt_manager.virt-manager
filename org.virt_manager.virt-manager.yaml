@@ -89,7 +89,7 @@ modules:
               type: anitya
               project-id: 13270
               stable-only: true
-              url-template: https://www.gnu.org/software/xorriso/xorriso-$version*.tar.gz
+              url-template: https://www.gnu.org/software/xorriso/xorriso-$version.tar.gz
 
       - name: libvirt
         buildsystem: meson
