@@ -389,8 +389,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.81/vte-0.81.0.tar.xz
-            sha256: d54afc8bbe4a9f53984e17a73f7d3e436b886d71433c247bfd7b9ca658c2ae40
+            url: https://download.gnome.org/sources/vte/0.81/vte-0.81.90.tar.xz
+            sha256: 90b261ab02597fee941f71a657ebf9d0e303aac377b485c444d854435a091321
             x-checker-data:
               type: gnome
               name: vte
@@ -446,8 +446,8 @@ modules:
               name: charset_normalizer
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/4f/52/34c6cf5bb9285074dc3531c437b3919e825d976fde097a7a73f79e726d03/certifi-2025.7.14-py3-none-any.whl
-            sha256: 6b31f564a415d79ee77df69d757bb49a5bb53bd9f756cbbe24394ffd6fc1f4b2
+            url: https://files.pythonhosted.org/packages/e5/48/1549795ba7742c948d2ad169c1c8cdbae65bc450d6cd753d124b17c8cd32/certifi-2025.8.3-py3-none-any.whl
+            sha256: f6c12493cfb1b06ba2ff328595af9350c65d6644968e5d3a2ffd78699af217a5
             x-checker-data:
               type: pypi
               name: certifi
