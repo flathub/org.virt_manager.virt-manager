@@ -71,9 +71,7 @@ modules:
           stable-only: true
           url-template: https://github.com/virt-manager/virt-manager/archive/v$version.tar.gz
       - type: patch
-        path: virt-manager-systray-icon-use-reverse-dns-naming-convention.patch
-      - type: patch
-        path: metadata.patch
+        path: 0001-Use-org.virt_manager.virt-manager-as-application-nam.patch
 
     modules:
       - shared-modules/intltool/intltool-0.51.json

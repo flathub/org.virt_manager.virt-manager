@@ -1,0 +1,68 @@
+From e6cc8397e8b99875b861aa17a38f33bfda008d77 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Timoth=C3=A9e=20Ravier?= <tim@siosm.fr>
+Date: Mon, 25 Nov 2024 10:08:14 +0100
+Subject: [PATCH] Use org.virt_manager.virt-manager as application name
+
+Includes changes from: tinywrkb <tinywrkb@gmail.com>
+---
+ data/virt-manager.appdata.xml.in | 13 +++++++++++--
+ virtManager/systray.py           |  4 ++--
+ 2 files changed, 13 insertions(+), 4 deletions(-)
+
+diff --git a/data/virt-manager.appdata.xml.in b/data/virt-manager.appdata.xml.in
+index 08bf01a5e..feeddb08d 100644
+--- a/data/virt-manager.appdata.xml.in
++++ b/data/virt-manager.appdata.xml.in
+@@ -1,8 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <component type="desktop">
+-  <id>virt-manager.desktop</id>
++  <id>org.virt_manager.virt-manager</id>
+   <metadata_license>CC0-1.0</metadata_license>
+   <project_license>GPL-2.0+</project_license>
++  <developer id="org.virt_manager">
++    <name>The Virtual Machine Manager contributors</name>
++  </developer>
+   <name>Virtual Machine Manager</name>
+   <summary>Graphically manage KVM, Xen, or LXC via libvirt</summary>
+   <description>
+@@ -39,7 +42,13 @@
+     <keyword>kvm</keyword>
+   </keywords>
+   <content_rating type="oars-1.1"/>
+-  <launchable type="desktop-id">virt-manager.desktop</launchable>
++  <launchable type="desktop-id">org.virt_manager.virt-manager.desktop</launchable>
++  <replaces>
++    <id>virt-manager.desktop</id>
++  </replaces>
++  <provides>
++    <id>virt-manager.desktop</id>
++  </provides>
+   <releases>
+     <release version="5.1.0" date="2025-08-26"/>
+     <release version="5.0.0" date="2024-11-26"/>
+diff --git a/virtManager/systray.py b/virtManager/systray.py
+index 41874df53..04a35b6c1 100644
+--- a/virtManager/systray.py
++++ b/virtManager/systray.py
+@@ -111,7 +111,7 @@ class _SystrayIndicator(_Systray):  # pragma: no cover
+ 
+     def __init__(self):
+         self._icon = AppIndicator3.Indicator.new(
+-            "virt-manager", "virt-manager", AppIndicator3.IndicatorCategory.APPLICATION_STATUS
++            "virt-manager", "org.virt_manager.virt-manager", AppIndicator3.IndicatorCategory.APPLICATION_STATUS
+         )
+ 
+     def set_menu(self, menu):
+@@ -142,7 +142,7 @@ class _SystrayStatusIcon(_Systray):  # pragma: no cover
+ 
+     def __init__(self):
+         self._icon = Gtk.StatusIcon()
+-        self._icon.set_property("icon-name", "virt-manager")
++        self._icon.set_property("icon-name", "org.virt_manager.virt-manager")
+         self._icon.connect("activate", _toggle_manager)
+         self._icon.connect("popup-menu", self._popup_cb)
+         self._icon.set_tooltip_text(_("Virtual Machine Manager"))
+-- 
+2.51.0
+
