@@ -112,8 +112,8 @@ modules:
           - -Dsysctl_config=disabled
         sources:
           - type: archive
-            url: https://libvirt.org/sources/libvirt-11.6.0.tar.xz
-            sha256: cc0e8c226559b479833c8bc9c77a8ec301482ab0305fcd98d27f11cc6877fd23
+            url: https://libvirt.org/sources/libvirt-11.7.0.tar.xz
+            sha256: dd56db0ced8baf668f476698db9956f160c93c0ec0c47a0603843235bf156f78
             x-checker-data:
               type: anitya
               project-id: 13830
@@ -238,8 +238,8 @@ modules:
           - python3 setup.py install --skip-build --prefix=/app --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://libvirt.org/sources/python/libvirt-python-11.6.0.tar.gz
-            sha256: cf6077eddf7e0d20d7193c48309d57cb8d63e2adc68cafb2cf8354ec3d807dd8
+            url: https://libvirt.org/sources/python/libvirt-python-11.7.0.tar.gz
+            sha256: f65f80fe7dabb47c2ea887bec5f62509b756282acac4fa958ab74706c0b76c11
             x-checker-data:
               type: anitya
               project-id: 13829
@@ -281,8 +281,8 @@ modules:
                 --prefix=${FLATPAK_DEST} pyparsing --no-build-isolation
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/05/e7/df2285f3d08fee213f2d041540fa4fc9ca6c2d44cf36d3a035bf2a8d2bcc/pyparsing-3.2.3-py3-none-any.whl
-                sha256: a749938e02d6fd0b59b356ca504a24982314bb090c383e3cf201c95ef7e2bfcf
+                url: https://files.pythonhosted.org/packages/53/b8/fbab973592e23ae313042d450fc26fa24282ebffba21ba373786e1ce63b4/pyparsing-3.2.4-py3-none-any.whl
+                sha256: 91d0fcde680d42cd031daf3a6ba20da3107e08a75de50da58360e7d94ab24d36
                 x-checker-data:
                   type: pypi
                   name: pyparsing
@@ -387,8 +387,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.81/vte-0.81.90.tar.xz
-            sha256: 90b261ab02597fee941f71a657ebf9d0e303aac377b485c444d854435a091321
+            url: https://download.gnome.org/sources/vte/0.82/vte-0.82.0.tar.xz
+            sha256: b0718db3254730701b43bf5e113cbf8cdb2c14715d32ee1e8a707dc6eb70535f
             x-checker-data:
               type: gnome
               name: vte
