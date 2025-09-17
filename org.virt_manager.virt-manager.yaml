@@ -171,8 +171,8 @@ modules:
                 --prefix=${FLATPAK_DEST} "docutils"
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/44/57/8db39bc5f98f042e0153b1de9fb88e1a409a33cda4dd7f723c2ed71e01f6/docutils-0.22-py3-none-any.whl
-                sha256: 4ed966a0e96a0477d852f7af31bdcb3adc049fbb35ccba358c2ea8a03287615e
+                url: https://files.pythonhosted.org/packages/8c/dc/1948b90c5d9dbfa4d1fd3991013a042ba3ac62ebd3afdcb3fac08366e755/docutils-0.22.1-py3-none-any.whl
+                sha256: 806e896f256a17466426544038f30cb860a99f5d4af640e36c284bfcb1824512
                 x-checker-data:
                   type: pypi
                   name: docutils
