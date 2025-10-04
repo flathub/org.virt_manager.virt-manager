@@ -112,8 +112,8 @@ modules:
           - -Dsysctl_config=disabled
         sources:
           - type: archive
-            url: https://libvirt.org/sources/libvirt-11.7.0.tar.xz
-            sha256: dd56db0ced8baf668f476698db9956f160c93c0ec0c47a0603843235bf156f78
+            url: https://libvirt.org/sources/libvirt-11.8.0.tar.xz
+            sha256: f7882fe65302bbcf804b573e0128c4fc6bfc52c9c3f44852a04de2391d858e34
             x-checker-data:
               type: anitya
               project-id: 13830
