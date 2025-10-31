@@ -110,6 +110,8 @@ modules:
           - -Dfirewalld_zone=disabled
           - -Dinit_script=none
           - -Dsysctl_config=disabled
+          - -Dlibssh=enabled
+          - -Dlibssh2=enabled
         sources:
           - type: archive
             url: https://libvirt.org/sources/libvirt-11.8.0.tar.xz
@@ -194,6 +196,35 @@ modules:
                   - autoreconf -ifv
             cleanup:
               - '*'
+          - name: libssh
+            cleanup:
+              - /include
+              - /share
+            buildsystem: cmake-ninja
+            builddir: true
+            sources:
+              - type: archive
+                url: https://www.libssh.org/files/0.11/libssh-0.11.3.tar.xz
+                sha256: 7d8a1361bb094ec3f511964e78a5a4dba689b5986e112afabe4f4d0d6c6125c3
+                x-checker-data:
+                  type: anitya
+                  project-id: 1729
+                  stable-only: true,
+                  url-template: https://www.libssh.org/files/$major.$minor/libssh-$version.tar.xz
+          - name: libssh2
+            buildsystem: cmake-ninja
+            config-opts:
+              - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+              - -DCMAKE_C_FLAGS=-fPIC
+            sources:
+              - type: archive
+                url: https://www.libssh2.org/download/libssh2-1.11.1.tar.gz
+                sha256: d9ec76cbe34db98eec3539fe2c899d26b0c837cb3eb466a56b0f109cabf658f7
+                x-checker-data:
+                  type: anitya
+                  project-id: 1730
+                  stable-only: true,
+                  url-template: https://www.libssh2.org/download/libssh2-$version.tar.gz
 
       - name: libvirt-glib
         buildsystem: meson
