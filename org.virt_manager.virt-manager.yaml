@@ -1,6 +1,6 @@
 app-id: org.virt_manager.virt-manager
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: virt-manager
 rename-icon: virt-manager
@@ -78,6 +78,31 @@ modules:
       - shared-modules/intltool/intltool-0.51.json
       - shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json
 
+      - name: pygobject
+        buildsystem: meson
+        sources:
+          - type: archive
+            url: https://download.gnome.org/sources/pygobject/3.55/pygobject-3.55.0.tar.gz
+            sha256: 8857ff725922a3b2c42d9f11c1bb609ccc25f319a2c802190a1c09ad267442c7
+            x-checker-data:
+              type: gnome
+              name: pygobject
+              stable-only: true
+        modules:
+          - name: pycairo
+            buildsystem: meson
+            sources:
+              - type: archive
+                url: https://github.com/pygobject/pycairo/releases/download/v1.29.0/pycairo-1.29.0.tar.gz
+                sha256: f3f7fde97325cae80224c09f12564ef58d0d0f655da0e3b040f5807bd5bd3142
+                x-checker-data:
+                  type: json
+                  url: https://api.github.com/repos/pygobject/pycairo/releases/latest
+                  version-query: |
+                    .tag_name | sub("^v"; "")
+                  url-query: |
+                    .assets | map(select(.name=="pycairo-\($version).tar.gz")) | first | .browser_download_url
+
       - name: xorriso
         buildsystem: autotools
         sources:
@@ -134,10 +159,13 @@ modules:
             config-opts:
               - -DENABLE_THREADING=ON
               - -DDISABLE_WERROR=ON
+              - -DBUILD_TESTING=OFF
             sources:
               - type: archive
                 url: https://s3.amazonaws.com/json-c_releases/releases/json-c-0.18.tar.gz
                 sha256: 876ab046479166b869afc6896d288183bbc0e5843f141200c677b3e8dfb11724
+              - type: patch
+                path: json-c-c56fbb30f56ebf8dd9b79746875598a61d8c62ee.patch
           - name: libnl
             config-opts:
               - --enable-cli=no
@@ -318,8 +346,8 @@ modules:
                 --prefix=${FLATPAK_DEST} pyparsing --no-build-isolation
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/10/5e/1aa9a93198c6b64513c9d7752de7422c06402de6600a8767da1524f9570b/pyparsing-3.2.5-py3-none-any.whl
-                sha256: e38a4f02064cf41fe6593d328d0512495ad1f3d8a91c4f73fc401b3079a59a5e
+                url: https://files.pythonhosted.org/packages/8b/40/2614036cdd416452f5bf98ec037f38a1afb17f327cb8e6b652d4729e0af8/pyparsing-3.3.1-py3-none-any.whl
+                sha256: 023b5e7e5520ad96642e2c6db4cb683d3970bd640cdf7115049a6e9c3682df82
                 x-checker-data:
                   type: pypi
                   name: pyparsing
@@ -350,7 +378,6 @@ modules:
                   project-id: 9670
                   stable-only: true
                   url-template: https://download.gnome.org/sources/phodav/$version0.$version1/phodav-$version.tar.xz
-          - shared-modules/libusb/libusb.json
           - name: usbredir
             buildsystem: meson
             config-opts:
@@ -401,6 +428,22 @@ modules:
                   project-id: 14892
                   stable-only: true
                   url-template: https://gitlab.freedesktop.org/spice/spice-protocol/-/archive/v$version/spice-protocol-v$version.tar.gz
+          - name: python3-six
+            buildsystem: simple
+            build-commands:
+              - >-
+                pip3 install --verbose --exists-action=i --no-index
+                --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "six"
+                --no-build-isolation --ignore-installed
+            sources:
+              - type: file
+                url: >-
+                  https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl
+                sha256: 4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274
+                x-checker-data:
+                  type: pypi
+                  name: six
+                  packagetype: bdist_wheel
 
       - name: gtksourceview4
         buildsystem: meson
@@ -501,6 +544,7 @@ modules:
         config-opts:
           - -Dwith-usb-ids-path=/app/share/hwdata/usb.ids
           - -Dwith-pci-ids-path=/app/share/hwdata/pci.ids
+          - -Denable-gtk-doc=false
         sources:
           - type: archive
             url: https://releases.pagure.org/libosinfo/libosinfo-1.12.0.tar.xz
@@ -511,6 +555,8 @@ modules:
               stable-only: true
               url-template: https://releases.pagure.org/libosinfo/libosinfo-$version.tar.xz
               is-important: true
+          - type: patch
+            path: libosinfo-0adf38535637ec668e658d43f04f60f11f51574f.patch
         cleanup:
           - /share/gtk-doc
           - /share/vala
