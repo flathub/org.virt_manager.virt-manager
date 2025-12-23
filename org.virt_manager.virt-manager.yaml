@@ -353,7 +353,6 @@ modules:
                   project-id: 9670
                   stable-only: true
                   url-template: https://download.gnome.org/sources/phodav/$version0.$version1/phodav-$version.tar.xz
-          - shared-modules/libusb/libusb.json
           - name: usbredir
             buildsystem: meson
             config-opts:
