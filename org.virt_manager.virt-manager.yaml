@@ -78,6 +78,31 @@ modules:
       - shared-modules/intltool/intltool-0.51.json
       - shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json
 
+      - name: pygobject
+        buildsystem: meson
+        sources:
+          - type: archive
+            url: https://download.gnome.org/sources/pygobject/3.55/pygobject-3.55.0.tar.gz
+            sha256: 8857ff725922a3b2c42d9f11c1bb609ccc25f319a2c802190a1c09ad267442c7
+            x-checker-data:
+              type: gnome
+              name: pygobject
+              stable-only: true
+        modules:
+          - name: pycairo
+            buildsystem: meson
+            sources:
+              - type: archive
+                url: https://github.com/pygobject/pycairo/releases/download/v1.29.0/pycairo-1.29.0.tar.gz
+                sha256: f3f7fde97325cae80224c09f12564ef58d0d0f655da0e3b040f5807bd5bd3142
+                x-checker-data:
+                  type: json
+                  url: https://api.github.com/repos/pygobject/pycairo/releases/latest
+                  version-query: |
+                    .tag_name | sub("^v"; "")
+                  url-query: |
+                    .assets | map(select(.name=="pycairo-\($version).tar.gz")) | first | .browser_download_url
+
       - name: xorriso
         buildsystem: autotools
         sources:
