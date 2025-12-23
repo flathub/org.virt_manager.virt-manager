@@ -519,6 +519,7 @@ modules:
         config-opts:
           - -Dwith-usb-ids-path=/app/share/hwdata/usb.ids
           - -Dwith-pci-ids-path=/app/share/hwdata/pci.ids
+          - -Denable-gtk-doc=false
         sources:
           - type: archive
             url: https://releases.pagure.org/libosinfo/libosinfo-1.12.0.tar.xz
