@@ -530,6 +530,8 @@ modules:
               stable-only: true
               url-template: https://releases.pagure.org/libosinfo/libosinfo-$version.tar.xz
               is-important: true
+          - type: patch
+            path: libosinfo-0adf38535637ec668e658d43f04f60f11f51574f.patch
         cleanup:
           - /share/gtk-doc
           - /share/vala
