@@ -82,8 +82,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/pygobject/3.55/pygobject-3.55.2.tar.gz
-            sha256: 6261a65b2e5e447fe280d7874f9d5c63e509248ec734b4c9ed5a5d762cac543c
+            url: https://download.gnome.org/sources/pygobject/3.55/pygobject-3.55.3.tar.gz
+            sha256: 14f52750312bd689dde3a75e968849e3e16c4a0803f1c7734dffb00a1c847af9
             x-checker-data:
               type: gnome
               name: pygobject
@@ -234,8 +234,8 @@ modules:
             builddir: true
             sources:
               - type: archive
-                url: https://www.libssh.org/files/0.11/libssh-0.11.3.tar.xz
-                sha256: 7d8a1361bb094ec3f511964e78a5a4dba689b5986e112afabe4f4d0d6c6125c3
+                url: https://www.libssh.org/files/0.12/libssh-0.12.0.tar.xz
+                sha256: 1a6af424d8327e5eedef4e5fe7f5b924226dd617ac9f3de80f217d82a36a7121
                 x-checker-data:
                   type: anitya
                   project-id: 1729
@@ -346,8 +346,8 @@ modules:
                 --prefix=${FLATPAK_DEST} pyparsing --no-build-isolation
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/8b/40/2614036cdd416452f5bf98ec037f38a1afb17f327cb8e6b652d4729e0af8/pyparsing-3.3.1-py3-none-any.whl
-                sha256: 023b5e7e5520ad96642e2c6db4cb683d3970bd640cdf7115049a6e9c3682df82
+                url: https://files.pythonhosted.org/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl
+                sha256: 850ba148bd908d7e2411587e247a1e4f0327839c40e2e5e6d05a007ecc69911d
                 x-checker-data:
                   type: pypi
                   name: pyparsing
@@ -357,8 +357,8 @@ modules:
           - name: libcacard
             sources:
               - type: archive
-                url: https://www.spice-space.org/download/libcacard/libcacard-2.8.1.tar.xz
-                sha256: fbbf4de8cb7db5bdff5ecb672ff0dbe6939fb9f344b900d51ba6295329a332e7
+                url: https://www.spice-space.org/download/libcacard/libcacard-2.8.2.tar.xz
+                sha256: 45fc28a6ff3c7a359d4448132ca190f0a9c760540c445dba4597a5b71de40f68
                 x-checker-data:
                   type: anitya
                   project-id: 18776
@@ -468,8 +468,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.82/vte-0.82.3.tar.xz
-            sha256: 6dc6278f6fee30d07d1a03e2ba3335b1ea4e8d2956ceb59d861943115d930a85
+            url: https://download.gnome.org/sources/vte/0.83/vte-0.83.90.tar.xz
+            sha256: a43441a78f8893268ae927e7bae3b17ffe669913ed954e172fbd12d3e083e286
             x-checker-data:
               type: gnome
               name: vte
@@ -489,8 +489,8 @@ modules:
               - -DFASTFLOAT_TEST:BOOL=OFF
             sources:
               - type: archive
-                url: https://github.com/fastfloat/fast_float/archive/refs/tags/v8.2.2.tar.gz
-                sha256: e64b5fff88e04959154adbd5fb83331d91f2e04ac06454671cdfcbdff172b158
+                url: https://github.com/fastfloat/fast_float/archive/refs/tags/v8.2.3.tar.gz
+                sha256: fa811076bad7b7151ce826005a7213971c879b192ee4505a7016c8413038c2d0
                 x-checker-data:
                   type: anitya
                   project-id: 214353
