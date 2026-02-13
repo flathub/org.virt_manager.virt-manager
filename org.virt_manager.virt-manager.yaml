@@ -278,22 +278,6 @@ modules:
               is-important: true
         cleanup:
           - /share/gtk-doc
-        modules:
-          - name: libcap-ng
-            config-opts:
-              - --enable-static=no
-            sources:
-              - type: archive
-                url: https://github.com/stevegrubb/libcap-ng/archive/v0.9.tar.gz
-                sha256: d7463da4b50924a385e306f585bb05dbe58e212ba846f8593c3b2bd31c6cb46b
-                x-checker-data:
-                  type: anitya
-                  project-id: 1570
-                  stable-only: true
-                  url-template: https://github.com/stevegrubb/libcap-ng/archive/v$version.tar.gz
-            cleanup:
-              - /bin
-              - /share/aclocal
 
       - name: libvirt-python
         buildsystem: simple
