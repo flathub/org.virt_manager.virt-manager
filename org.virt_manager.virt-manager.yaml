@@ -107,8 +107,8 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://www.gnu.org/software/xorriso/xorriso-1.5.6.pl02.tar.gz
-            sha256: 786f9f5df9865cc5b0c1fecee3d2c0f5e04cab8c9a859bd1c9c7ccd4964fdae1
+            url: https://www.gnu.org/software/xorriso/xorriso-1.5.8.pl01.tar.gz
+            sha256: 0381798b7bb4f162578b4f31fe30bfe53608b5077075967f8df2facfab4c90f9
             x-checker-data:
               type: anitya
               project-id: 13270
@@ -140,8 +140,8 @@ modules:
           - -Dlibssh2=enabled
         sources:
           - type: archive
-            url: https://libvirt.org/sources/libvirt-12.2.0.tar.xz
-            sha256: ac93cd0da743a6c231911fb549399b415102ecfee775329bebbf61ed843b9786
+            url: https://libvirt.org/sources/libvirt-12.3.0.tar.xz
+            sha256: 0d2b548d1b732d1ae21cfefacc204a2c8dabada80ea1edfbd528bfb73b9d2d27
             x-checker-data:
               type: anitya
               project-id: 13830
@@ -452,8 +452,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.82/vte-0.82.3.tar.xz
-            sha256: 6dc6278f6fee30d07d1a03e2ba3335b1ea4e8d2956ceb59d861943115d930a85
+            url: https://download.gnome.org/sources/vte/0.84/vte-0.84.0.tar.xz
+            sha256: 0414e31583836aeb7878da25f67c515f7e8879917ecc37c92e26b83e8d8fc3e3
             x-checker-data:
               type: gnome
               name: vte
@@ -488,15 +488,15 @@ modules:
             --prefix=${FLATPAK_DEST} "requests" --no-build-isolation
         sources:
           - type: file
-            url: https://files.pythonhosted.org/packages/39/08/aaaad47bc4e9dc8c725e68f9d04865dbcb2052843ff09c97b08904852d84/urllib3-2.6.3-py3-none-any.whl
-            sha256: bf272323e553dfb2e87d9bfd225ca7b0f467b919d7bbd355436d3fd37cb0acd4
+            url: https://files.pythonhosted.org/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl
+            sha256: 9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897
             x-checker-data:
               type: pypi
               name: urllib3
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/0e/61/66938bbb5fc52dbdf84594873d5b51fb1f7c7794e9c0f5bd885f30bc507b/idna-3.11-py3-none-any.whl
-            sha256: 771a87f49d9defaf64091e6e6fe9c18d4833f140bd19464795bc32d966ca37ea
+            url: https://files.pythonhosted.org/packages/5d/13/ad7d7ca3808a898b4612b6fe93cde56b53f3034dcde235acb1f0e1df24c6/idna-3.13-py3-none-any.whl
+            sha256: 892ea0cde124a99ce773decba204c5552b69c3c67ffd5f232eb7696135bc8bb3
             x-checker-data:
               type: pypi
               name: idna
@@ -509,8 +509,8 @@ modules:
               name: charset_normalizer
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/9a/3c/c17fb3ca2d9c3acff52e30b309f538586f9f5b9c9cf454f3845fc9af4881/certifi-2026.2.25-py3-none-any.whl
-            sha256: 027692e4402ad994f1c42e52a4997a9763c646b73e4096e4d5d6db8af1d6f0fa
+            url: https://files.pythonhosted.org/packages/22/30/7cd8fdcdfbc5b869528b079bfb76dcdf6056b1a2097a662e5e8c04f42965/certifi-2026.4.22-py3-none-any.whl
+            sha256: 3cb2210c8f88ba2318d29b0388d1023c8492ff72ecdde4ebdaddbb13a31b1c4a
             x-checker-data:
               type: pypi
               name: certifi
