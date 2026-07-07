@@ -140,8 +140,8 @@ modules:
           - -Dlibssh2=enabled
         sources:
           - type: archive
-            url: https://libvirt.org/sources/libvirt-12.4.0.tar.xz
-            sha256: c86c7f758391b895ec90f76f965a56266167028978ac6dce824fea4d6a036b6d
+            url: https://libvirt.org/sources/libvirt-12.5.0.tar.xz
+            sha256: 4fff62f08fdf938fe7fd21e260a908a44193cc6d34c42d3b1afdcadd34120357
             x-checker-data:
               type: anitya
               project-id: 13830
@@ -452,8 +452,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.82/vte-0.82.3.tar.xz
-            sha256: 6dc6278f6fee30d07d1a03e2ba3335b1ea4e8d2956ceb59d861943115d930a85
+            url: https://download.gnome.org/sources/vte/0.84/vte-0.84.0.tar.xz
+            sha256: 0414e31583836aeb7878da25f67c515f7e8879917ecc37c92e26b83e8d8fc3e3
             x-checker-data:
               type: gnome
               name: vte
@@ -473,8 +473,8 @@ modules:
               - -DFASTFLOAT_TEST:BOOL=OFF
             sources:
               - type: archive
-                url: https://github.com/fastfloat/fast_float/archive/refs/tags/v8.2.6.tar.gz
-                sha256: 3d5ccfd4ee0f70bb7d5da520c9d7d85587b2c566257ee55bdfbf15516c13bf1d
+                url: https://github.com/fastfloat/fast_float/archive/refs/tags/v8.2.10.tar.gz
+                sha256: 76f958dd97b1cf4d8862d1f0986a47d4bdfa8845252bae15ef0f40de3b95961f
                 x-checker-data:
                   type: anitya
                   project-id: 214353
@@ -502,15 +502,15 @@ modules:
               name: idna
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/db/8f/61959034484a4a7c527811f4721e75d02d653a35afb0b6054474d8185d4c/charset_normalizer-3.4.7-py3-none-any.whl
-            sha256: 3dce51d0f5e7951f8bb4900c257dad282f49190fdbebecd4ba99bcc41fef404d
+            url: https://files.pythonhosted.org/packages/98/2b/f97f1c193fb855c345d678f5077d6926034db0722df74c8f057020e05a25/charset_normalizer-3.4.9-py3-none-any.whl
+            sha256: 68e5f26a1ad57ded6d1cfb85331d1c1a195314756471d97758c48498bb4dcdf5
             x-checker-data:
               type: pypi
               name: charset_normalizer
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/59/8c/57e832b7af6d7c5abe66eb3fbe3a3a32f4d11ea23a1aa7131371035be991/certifi-2026.5.20-py3-none-any.whl
-            sha256: 3c52e209ba0a4ad7aebe60436a4ab349c39e1e602e8c134221e546902ad25897
+            url: https://files.pythonhosted.org/packages/ef/2f/c5464532e965badff2f4c4c1a3a83f5697f0d7c407ed0cda44aaa99bb451/certifi-2026.6.17-py3-none-any.whl
+            sha256: 2227dcbaafe0d2f59279d1762ddddc37783ed4354594f194ffc31d20f41fc3db
             x-checker-data:
               type: pypi
               name: certifi
