@@ -23,6 +23,8 @@ finish-args:
   - --filesystem=xdg-run/libvirt
   # Access to ssh configuration and keys
   - --filesystem=~/.ssh
+  # Access to active theme configuration for respecting light/dark preference
+  - --filesystem=xdg-config/gtk-3.0:ro
   # Access to ssh-agent pid and socket
   - --socket=ssh-auth
   # This PATH manipulation is needed so that the QEMU extension works OOTB
