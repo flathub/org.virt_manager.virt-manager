@@ -82,8 +82,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/pygobject/3.56/pygobject-3.56.3.tar.gz
-            sha256: 12760e4a0e3d04b6eb95e06f7a27e362c826d567ea613373a92c003b6c70d2d6
+            url: https://download.gnome.org/sources/pygobject/3.58/pygobject-3.58.0.tar.gz
+            sha256: 45068697de3ffe46840ca369705f23118b34db4f7deb63f6eff079a6734ddcca
             x-checker-data:
               type: gnome
               name: pygobject
@@ -93,8 +93,8 @@ modules:
             buildsystem: meson
             sources:
               - type: archive
-                url: https://github.com/pygobject/pycairo/releases/download/v1.29.0/pycairo-1.29.0.tar.gz
-                sha256: f3f7fde97325cae80224c09f12564ef58d0d0f655da0e3b040f5807bd5bd3142
+                url: https://github.com/pygobject/pycairo/releases/download/v1.29.1/pycairo-1.29.1.tar.gz
+                sha256: 4fbd26b4af24c9787d84cf5448e34eb8dca064b732479aaecd03109520eebd5f
                 x-checker-data:
                   type: json
                   url: https://api.github.com/repos/pygobject/pycairo/releases/latest
@@ -140,8 +140,8 @@ modules:
           - -Dlibssh2=enabled
         sources:
           - type: archive
-            url: https://libvirt.org/sources/libvirt-12.4.0.tar.xz
-            sha256: c86c7f758391b895ec90f76f965a56266167028978ac6dce824fea4d6a036b6d
+            url: https://libvirt.org/sources/libvirt-12.7.0.tar.xz
+            sha256: 7ec1a04e7e4f4069353d4daac117bbe869287f5b202695de61fe1b079efb6cb6
             x-checker-data:
               type: anitya
               project-id: 13830
@@ -234,8 +234,8 @@ modules:
             builddir: true
             sources:
               - type: archive
-                url: https://www.libssh.org/files/0.12/libssh-0.12.0.tar.xz
-                sha256: 1a6af424d8327e5eedef4e5fe7f5b924226dd617ac9f3de80f217d82a36a7121
+                url: https://www.libssh.org/files/0.12/libssh-0.12.2.tar.xz
+                sha256: 49560f677d96e3706a904ac2de1116e25f3680937d51e5c92198fcba4a1c1e9f
                 x-checker-data:
                   type: anitya
                   project-id: 1729
@@ -452,8 +452,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.82/vte-0.82.3.tar.xz
-            sha256: 6dc6278f6fee30d07d1a03e2ba3335b1ea4e8d2956ceb59d861943115d930a85
+            url: https://download.gnome.org/sources/vte/0.84/vte-0.84.1.tar.xz
+            sha256: aca1caa8478aebcdbb1d67897fb3511eb7601debae6810e16a15b6fa25f31ac8
             x-checker-data:
               type: gnome
               name: vte
@@ -473,8 +473,8 @@ modules:
               - -DFASTFLOAT_TEST:BOOL=OFF
             sources:
               - type: archive
-                url: https://github.com/fastfloat/fast_float/archive/refs/tags/v8.2.6.tar.gz
-                sha256: 3d5ccfd4ee0f70bb7d5da520c9d7d85587b2c566257ee55bdfbf15516c13bf1d
+                url: https://github.com/fastfloat/fast_float/archive/refs/tags/v8.2.10.tar.gz
+                sha256: 76f958dd97b1cf4d8862d1f0986a47d4bdfa8845252bae15ef0f40de3b95961f
                 x-checker-data:
                   type: anitya
                   project-id: 214353
@@ -495,22 +495,22 @@ modules:
               name: urllib3
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/1e/5e/d4e9f1a599fb8e573b7b87160658329fbf28d19eac2718f51fc3def3aa5a/idna-3.18-py3-none-any.whl
-            sha256: 7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2
+            url: https://files.pythonhosted.org/packages/57/b0/0e52c878c53f245edd3a11020f20979b3f490f245af532c7cae3027754b5/idna-3.19-py3-none-any.whl
+            sha256: 815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4
             x-checker-data:
               type: pypi
               name: idna
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/db/8f/61959034484a4a7c527811f4721e75d02d653a35afb0b6054474d8185d4c/charset_normalizer-3.4.7-py3-none-any.whl
-            sha256: 3dce51d0f5e7951f8bb4900c257dad282f49190fdbebecd4ba99bcc41fef404d
+            url: https://files.pythonhosted.org/packages/cc/61/d01fc49b8dea277640b55a9e15960dbca9fdc8c9fde18e572d39c59f4019/charset_normalizer-3.5.1-py3-none-any.whl
+            sha256: 6df0ec430f9a831772c23ca5a224cba36517a58a84bb32c32bb59a9fa67c47f6
             x-checker-data:
               type: pypi
               name: charset_normalizer
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/59/8c/57e832b7af6d7c5abe66eb3fbe3a3a32f4d11ea23a1aa7131371035be991/certifi-2026.5.20-py3-none-any.whl
-            sha256: 3c52e209ba0a4ad7aebe60436a4ab349c39e1e602e8c134221e546902ad25897
+            url: https://files.pythonhosted.org/packages/0b/a7/71ac2cff56fec219ed242bb11b8efb69fcc4bec75db06fb7bfe35de520e6/certifi-2026.7.22-py3-none-any.whl
+            sha256: 62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775
             x-checker-data:
               type: pypi
               name: certifi
