@@ -7,7 +7,6 @@ rename-icon: virt-manager
 rename-desktop-file: virt-manager.desktop
 rename-appdata-file: virt-manager.appdata.xml
 finish-args:
-  - --device=dri
   # USB device redirection
   - --device=all
   # Access to various folders that might be shared to VMs
