@@ -81,8 +81,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/pygobject/3.56/pygobject-3.56.3.tar.gz
-            sha256: 12760e4a0e3d04b6eb95e06f7a27e362c826d567ea613373a92c003b6c70d2d6
+            url: https://download.gnome.org/sources/pygobject/3.58/pygobject-3.58.1.tar.gz
+            sha256: 4c80598ade17fbaa7798e01a25d0bf29ce109740786026a074c5c62bb3e79d23
             x-checker-data:
               type: gnome
               name: pygobject
@@ -92,8 +92,8 @@ modules:
             buildsystem: meson
             sources:
               - type: archive
-                url: https://github.com/pygobject/pycairo/releases/download/v1.29.0/pycairo-1.29.0.tar.gz
-                sha256: f3f7fde97325cae80224c09f12564ef58d0d0f655da0e3b040f5807bd5bd3142
+                url: https://github.com/pygobject/pycairo/releases/download/v1.29.2/pycairo-1.29.2.tar.gz
+                sha256: 3e69fff74fe64f5ba2dfa31f67c6bdf26413342574047437d2ac520d35e9a489
                 x-checker-data:
                   type: json
                   url: https://api.github.com/repos/pygobject/pycairo/releases/latest
@@ -139,8 +139,8 @@ modules:
           - -Dlibssh2=enabled
         sources:
           - type: archive
-            url: https://libvirt.org/sources/libvirt-12.4.0.tar.xz
-            sha256: c86c7f758391b895ec90f76f965a56266167028978ac6dce824fea4d6a036b6d
+            url: https://libvirt.org/sources/libvirt-12.9.0.tar.xz
+            sha256: dcf579d8a949f4cbf56820529d48f200382a48ea12855ffded7c16a189353cd7
             x-checker-data:
               type: anitya
               project-id: 13830
@@ -188,8 +188,8 @@ modules:
               - --disable-gssapi
             sources:
               - type: archive
-                url: https://downloads.sourceforge.net/sourceforge/libtirpc/libtirpc-1.3.7.tar.bz2
-                sha256: b47d3ac19d3549e54a05d0019a6c400674da716123858cfdb6d3bdd70a66c702
+                url: https://downloads.sourceforge.net/sourceforge/libtirpc/libtirpc-1.3.8.tar.bz2
+                sha256: 8839959bfcc7a0f4c609d8e4f53f1c67ae33de23775ec35beb39ff15adf11920
                 x-checker-data:
                   type: anitya
                   project-id: 1740
@@ -233,8 +233,8 @@ modules:
             builddir: true
             sources:
               - type: archive
-                url: https://www.libssh.org/files/0.12/libssh-0.12.0.tar.xz
-                sha256: 1a6af424d8327e5eedef4e5fe7f5b924226dd617ac9f3de80f217d82a36a7121
+                url: https://www.libssh.org/files/0.12/libssh-0.12.2.tar.xz
+                sha256: 49560f677d96e3706a904ac2de1116e25f3680937d51e5c92198fcba4a1c1e9f
                 x-checker-data:
                   type: anitya
                   project-id: 1729
@@ -314,8 +314,8 @@ modules:
           - -Dusb-acl-helper-dir=/app/lib
         sources:
           - type: archive
-            url: https://www.spice-space.org/download/gtk/spice-gtk-0.42.tar.xz
-            sha256: 9380117f1811ad1faa1812cb6602479b6290d4a0d8cc442d44427f7f6c0e7a58
+            url: https://www.spice-space.org/download/gtk/spice-gtk-0.43.tar.xz
+            sha256: cee26e5b2d22909f35b40a94398d1e863ca3962ee46494ca97aab206abc3203b
             x-checker-data:
               type: anitya
               project-id: 11576
@@ -329,8 +329,8 @@ modules:
                 --prefix=${FLATPAK_DEST} pyparsing --no-build-isolation
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl
-                sha256: 850ba148bd908d7e2411587e247a1e4f0327839c40e2e5e6d05a007ecc69911d
+                url: https://files.pythonhosted.org/packages/38/bb/d215ee7c73b61497b28a5503f9f53523f294fcc936762b7caf90e0c1c2b5/pyparsing-3.3.3-py3-none-any.whl
+                sha256: ece8c00a69cf01b45d0b1dedabb469c90d8caf996d4fda40f147627a122849a4
                 x-checker-data:
                   type: pypi
                   name: pyparsing
@@ -378,8 +378,8 @@ modules:
             buildsystem: meson
             sources:
               - type: archive
-                url: https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-019.tar.xz
-                sha256: 659f40c440e31ba865c52c818a33d3ba6a97349e3353f8b1985179cb2aa71ec5
+                url: https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-020.tar.xz
+                sha256: 20287d68fcd9ebb50a05ba0645a4af7583bd8dfc7307215ba121e4bc6d057aa1
                 x-checker-data:
                   type: anitya
                   project-id: 5061
@@ -451,8 +451,8 @@ modules:
           - -Dvapi=false
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/vte/0.82/vte-0.82.3.tar.xz
-            sha256: 6dc6278f6fee30d07d1a03e2ba3335b1ea4e8d2956ceb59d861943115d930a85
+            url: https://download.gnome.org/sources/vte/0.84/vte-0.84.1.tar.xz
+            sha256: aca1caa8478aebcdbb1d67897fb3511eb7601debae6810e16a15b6fa25f31ac8
             x-checker-data:
               type: gnome
               name: vte
@@ -472,8 +472,8 @@ modules:
               - -DFASTFLOAT_TEST:BOOL=OFF
             sources:
               - type: archive
-                url: https://github.com/fastfloat/fast_float/archive/refs/tags/v8.2.6.tar.gz
-                sha256: 3d5ccfd4ee0f70bb7d5da520c9d7d85587b2c566257ee55bdfbf15516c13bf1d
+                url: https://github.com/fastfloat/fast_float/archive/refs/tags/v8.3.3.tar.gz
+                sha256: 4dd695f051893c8218faf2ed9871fa4a4990aa6aee2d3190ed7bfa2e83092245
                 x-checker-data:
                   type: anitya
                   project-id: 214353
@@ -487,29 +487,29 @@ modules:
             --prefix=${FLATPAK_DEST} "requests" --no-build-isolation
         sources:
           - type: file
-            url: https://files.pythonhosted.org/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl
-            sha256: 9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897
+            url: https://files.pythonhosted.org/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl
+            sha256: 0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3
             x-checker-data:
               type: pypi
               name: urllib3
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/1e/5e/d4e9f1a599fb8e573b7b87160658329fbf28d19eac2718f51fc3def3aa5a/idna-3.18-py3-none-any.whl
-            sha256: 7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2
+            url: https://files.pythonhosted.org/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl
+            sha256: ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c
             x-checker-data:
               type: pypi
               name: idna
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/db/8f/61959034484a4a7c527811f4721e75d02d653a35afb0b6054474d8185d4c/charset_normalizer-3.4.7-py3-none-any.whl
-            sha256: 3dce51d0f5e7951f8bb4900c257dad282f49190fdbebecd4ba99bcc41fef404d
+            url: https://files.pythonhosted.org/packages/fc/ad/d07d7862a62ffa6d79d68074d14823243dd235a77c45262acbf6adeb28bf/charset_normalizer-3.5.2-py3-none-any.whl
+            sha256: b6b751274acb69d77b3323d6b7dbaa3c7fdfc1eb829b7eb61d262f32e1af9685
             x-checker-data:
               type: pypi
               name: charset_normalizer
               packagetype: bdist_wheel
           - type: file
-            url: https://files.pythonhosted.org/packages/59/8c/57e832b7af6d7c5abe66eb3fbe3a3a32f4d11ea23a1aa7131371035be991/certifi-2026.5.20-py3-none-any.whl
-            sha256: 3c52e209ba0a4ad7aebe60436a4ab349c39e1e602e8c134221e546902ad25897
+            url: https://files.pythonhosted.org/packages/32/d1/a3652fe2c19134d0d15922177821d863cbd7e842d53a21bbe7e8e3a1b5ac/certifi-2026.10.23-py3-none-any.whl
+            sha256: e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1
             x-checker-data:
               type: pypi
               name: certifi
