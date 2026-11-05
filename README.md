@@ -32,7 +32,7 @@ Note that issues with the QEMU/KVM user session should be reported to the
 
 ### Directory passthrough with virtiofsd
 
-Using virtiofsd for directory passthrough is [not supported](https://github.com/flathub/org.virt_manager.virt_manager.Extension.Qemu/issues/10). This is usually used in conjunction with WinFsp to share files with Windows guests.
+Using virtiofsd for directory passthrough is [not supported](https://github.com/flathub/org.virt_manager.virt_manager.Extension.Qemu/issues/10) with the unprivileged user session connections. This is usually used in conjunction with WinFsp to share files with Windows guests.
 
 ### USB redirection
 
