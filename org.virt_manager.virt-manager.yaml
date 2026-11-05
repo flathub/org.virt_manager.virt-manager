@@ -285,13 +285,13 @@ modules:
           - python3 setup.py install --skip-build --prefix=/app --root=/ --optimize=1
         sources:
           - type: archive
-            url: https://libvirt.org/sources/python/libvirt-python-11.7.0.tar.gz
-            sha256: f65f80fe7dabb47c2ea887bec5f62509b756282acac4fa958ab74706c0b76c11
+            url: https://libvirt.org/sources/python/libvirt_python-12.9.0.tar.gz
+            sha256: 598b85cd1f5e94b97684b725cd45a65f6ab734c6edaa61d4aec98721f30e9401
             x-checker-data:
               type: anitya
-              project-id: 13829
+              project-id: 13830
               stable-only: true
-              url-template: https://libvirt.org/sources/python/libvirt-python-$version.tar.gz
+              url-template: https://libvirt.org/sources/python/libvirt_python-$version.tar.gz
               is-important: true
 
       - name: gtk-vnc
@@ -530,13 +530,13 @@ modules:
           - -Denable-gtk-doc=false
         sources:
           - type: archive
-            url: https://releases.pagure.org/libosinfo/libosinfo-1.12.0.tar.xz
+            url: https://gitlab.com/libosinfo/libosinfo/-/releases/v1.12.0/downloads/libosinfo-1.12.0.tar.xz
             sha256: ad8557ece26793da43d26de565e3d68ce2ee6bfb8d0113b7cc7dfe07f6bfc6b6
             x-checker-data:
               type: anitya
               project-id: 155460
               stable-only: true
-              url-template: https://releases.pagure.org/libosinfo/libosinfo-$version.tar.xz
+              url-template: https://gitlab.com/libosinfo/libosinfo/-/releases/v$version/downloads/libosinfo-$version.tar.xz
               is-important: true
           - type: patch
             path: libosinfo-0adf38535637ec668e658d43f04f60f11f51574f.patch
@@ -550,14 +550,14 @@ modules:
               - osinfo-db-import --system osinfo-db.tar.xz
             sources:
               - type: file
-                url: https://releases.pagure.org/libosinfo/osinfo-db-20251212.tar.xz
-                sha256: 06379250c91306c98cb9726af44eae5909dfdd5449f90331e904ae1221d8d5e7
+                url: https://gitlab.com/libosinfo/osinfo-db/-/releases/v20260812/downloads/osinfo-db-20260812.tar.xz
+                sha256: f13ed6e1e480b5266d39cad7f0010febdf0265dfc45579de2fb34543bc6b35de
                 dest-filename: osinfo-db.tar.xz
                 x-checker-data:
                   type: anitya
                   project-id: 226784
                   stable-only: true
-                  url-template: https://releases.pagure.org/libosinfo/osinfo-db-$version.tar.xz
+                  url-template: https://gitlab.com/libosinfo/osinfo-db/-/releases/v$version/downloads/osinfo-db-$version.tar.xz
                   is-important: true
             modules:
               - name: osinfo-db-tools
