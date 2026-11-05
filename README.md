@@ -30,6 +30,10 @@ if you find something that does not work.
 Note that issues with the QEMU/KVM user session should be reported to the
 [issue tracker for the QEMU extension](https://github.com/flathub/org.virt_manager.virt_manager.Extension.Qemu/issues).
 
+### Directory passthrough with virtiofsd
+
+Using virtiofsd for directory passthrough is [not supported](https://github.com/flathub/org.virt_manager.virt_manager.Extension.Qemu/issues/10) with the unprivileged user session connections. This is usually used in conjunction with WinFsp to share files with Windows guests.
+
 ### USB redirection
 
 This Flatpak currently has access to all USB devices.
